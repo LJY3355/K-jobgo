@@ -1,0 +1,14 @@
+[MySQL 설정 정보]
+
+- 데이터베이스 이름 (DB name): kjobgo_db
+- 사용자 이름 (Username): root
+- 비밀번호 (Password): kjobgo1970
+- 포트 (Port): 3306 (기본 포트)
+
+[연결 URL 예시]
+jdbc:mysql://localhost:3306/kjobgo_db
+
+[추가 메모]
+- MySQL 서버 버전: 8.0.41
+- 문자셋(Character Set): utf8mb4
+- 콜레이션(Collation): utf8mb4_general_ci

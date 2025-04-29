@@ -1,0 +1,187 @@
+/* 메인 콘텐츠 */
+main.main-var {
+  flex: 1;
+  padding: 100px 20px 60px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #0054a8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.k-jobgologo {
+  margin-bottom: 20px;
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.search-group {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.main-btn {
+  white-space: nowrap; /* 줄바꿈 금지 */
+  min-width: 70px;     /* 버튼 최소 너비 확보 */
+  padding: 10px 16px;
+  font-size: 15px;
+}
+
+.main-search {
+  padding: 12px;
+  width: 300px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  appearance: none;
+  transition: box-shadow 0.3s ease;
+   text-align: center; 
+}
+.main-search:focus {
+  outline: none;
+  border: 2px solid #0054a8;
+  background-color: #fff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 90%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+  list-style: none;
+  max-width: 320px;
+   text-align: center;   
+}
+.dropdown li {
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: center;  
+}
+.dropdown li:hover {
+  background-color: #f1f1f1;
+}
+
+.sub-page {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.link-page {
+  font-size: 16px;
+  color: #0E2C54;
+  border-bottom: 1px solid #0E2C54;
+  text-decoration: none;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.link-page:hover {
+  color: #E88C44;
+  border-bottom-color: #E88C44;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.main-slogan {
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #2C3E50;  
+ /*  🔁 여기를 다른 색으로 바꿔도 됨
+  color:	#1A2D4D; */
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeZoom 1.5s ease-out forwards;
+}
+
+@keyframes fadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-slogan {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .k-jobgologo {
+    width: 250px;
+  }
+
+  .main-search {
+    width: 80%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .dropdown {
+    min-width: 90%;
+    max-width: 95%;
+    font-size: 14px;
+  }
+
+  .sub-page {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .link-page {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-box {
+    flex-direction: column !important;
+  }
+
+  .step-box.left-align,
+  .step-box.right-align {
+    flex-direction: column !important;
+  }
+
+  .step-box::before {
+    left: auto !important;
+    right: auto !important;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-btn {
+    font-size: 14px;
+    min-width: 80px;
+    padding: 8px 12px;
+    white-space: nowrap;        /* 글자 줄바꿈 방지 (기본 OK) */
+    min-width: auto;            /* ✅ 버튼 너비 고정 (기본 너비로만) */
+    width: auto;                /* ✅ 필요 이상으로 넓어지지 않게 */
+    height: auto;
+    
+  }
+}
+

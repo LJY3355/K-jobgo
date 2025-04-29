@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-jobgo company-imfo</title>
+     <!-- Favicon -->
+	<link rel="icon" type="image/png" href="/img/favicon.png" />
+	
+<!-- ✅ 공통 먼저, 상세 후 -->
+<link rel="stylesheet" th:href="@{/css/layout.css}">
+<link rel="stylesheet" th:href="@{/css/toggle.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/company.css}">
+
+</head>
+
+<body>
+
+<header class="top-var">
+  <!-- ✅ 로고 + 슬로건 + 회사소개를 하나의 묶음으로 감싸기 -->
+<div class="brand-header">
+  <div class="logo-slogan">
+    <img src="/img/favicon.png" class="logo" />
+  <!-- 슬로건을 링크로 처리 -->
+  		<a th:href="@{/}" class="about-slogan"> KOREAMSA Inc.</a>
+  </div>
+</div>
+  
+	  <!-- 토글, 메뉴 네비게이션 -->
+	  <div class="menu-wrapper">
+	  <button>로그인</button>
+	    <div class="menu-toggle" >☰</div>
+	    <ul id="menu" class="hidden-menu">
+	      <li>관리자</li>
+	      <li>프로필작성</li>
+	      <li>문의게시판</li>
+	      <li>공지사항</li>
+	    </ul>
+	  </div>
+</header>
+  
+  <!-- ✅ K-jobgo 로고 전용 중앙 박스 (about-section 위에 배치) -->
+<div class="center-kjobgo-logo">
+<a th:href="@{/}">
+  <img src="/img/final_K-jobgo_.png" alt="K-jobgo 로고" class="k-jobgologo" />
+</a>
+</div>
+
+ <div class="about-section">
+        <!-- 첫 번째: 왼쪽 도형, 오른쪽 설명 -->
+        <div class="step-box left-align">
+            <div class="step-circle">
+                <div class="step-icon">🌱</div>
+                <h2 class="step-title-colored">
+  <span class="k">K</span><span class="dash">-</span><span class="j">j</span><span class="o1">o</span><span class="b">b</span><span class="g">g</span><span class="o2">o</span>
+</h2>
+
+            </div>
+            <div class="step-content">
+             <h2 class="step-title">Start · Free · Support · Job Matching</h2>
+                             <span class="keywords">Start your job journey in Korea.</span>
+                <p class="step-desc">외국인 근로자의 든든한 동반자, <span class="highlight">100% 무료</span> 취업 연계 플랫폼</p>
+            </div>
+        </div>
+
+        <!-- 두 번째: 왼쪽 도형, 오른쪽 설명 -->
+<div class="step-box left-align">
+            <div class="step-circle">
+                <div class="step-icon">⚖️</div>
+                <h2 class="step-title">Legal Support</h2>
+            </div>
+            <div class="step-content">
+             <h2 class="step-title">Labor · Tax · Administration · Safe System</h2>
+                  <span class="keywords">Build with Confidence. Operate with Compliance.</span>
+                <p class="step-desc">노무사, 세무사, 행정사와 함께 근로자를 위한 <span class="highlight">환경</span>을 완비했습니다.
+                      <br>
+   				 </p>
+            </div>
+
+        </div>
+
+ <!-- 세 번째: 왼쪽 도형, 오른쪽 설명 -->
+<div class="step-box left-align">
+  <div class="step-circle">
+    <div class="step-icon">👥</div>
+    <h2 class="step-title">Consult</h2>
+  </div>
+  <div class="step-content">
+    <h2 class="step-title">1:1 Customized Consultation</h2>
+    <span class="keywords">Talk to an expert who understands your culture.</span>
+    <p class="step-desc">
+      각 나라·지역별 담당자가 상주하여 <span class="highlight">1:1 맞춤 상담</span> 가능합니다.
+    </p>
+  </div>
+</div>
+
+<!-- 네 번째: 왼쪽 설명, 오른쪽 도형 -->
+<div class="step-box left-align">
+  <div class="step-circle">
+    <div class="step-icon">🤝</div>
+    <h2 class="step-title">After-care</h2>
+  </div>
+  <div class="step-content">
+    <h2 class="step-title">Visa · Salary · Culture · After-care</h2>
+    <span class="keywords">Support continues even after you start working.</span>
+    <p class="step-desc">
+      비자, 급여, 문화 적응까지 근로자의 <span class="highlight">취업 이후</span>까지 책임집니다.
+    </p>
+  </div>
+</div>
+
+<!-- 다섯 번째: 왼쪽 도형, 오른쪽 설명 -->
+<div class="step-box left-align">
+  <div class="step-circle">
+    <div class="step-icon">📞</div>
+    <h2 class="step-title">Access</h2>
+  </div>
+  <div class="step-content">
+    <h2 class="step-title">Call · Email · Visit · Accessibility</h2> 
+    <span class="keywords">You can reach us in many ways.</span>
+    <p class="step-desc">
+      유선, 이메일, 오프라인 방문 모두 가능하여 <span class="highlight">접근성</span>이 우수합니다.
+    </p>
+  </div>
+</div>
+</div>
+
+    <footer class="foot-var">
+  			<span>(주)한국경력지원사업단&nbsp; 대표이사 : 이준희 <span class="divider">|</span> 사업자등록번호 : 887-81-00124</span>
+     <div>
+        <p> 본사_경기도 김포시 김포한강4로 125 월드타워 705호 <span class="divider">|</span> 본부_경기도 광명시 일직로 43 GIDC A1706호</p>
+        <p> 국내지사_김해지사, 대구지사, 천안지사, 광주지사, 원주지사 <span class="divider">|</span> 해외지사_베트남, 필리핀, 인도네시아, 인도, 몽골, 네팔, 우즈베키스탄</p>
+		<p>Tel_ 031-983-0942 <span class="divider">|</span>  Fax_ 031-624-1540  <span class="divider">|</span> Email_ k-jobgo@naver.com</p>
+ 		<p>ⓒ 2025 K-jobgo. All rights reserved.</p>
+ 		</div>
+    </footer>
+    
+        <!-- JS 연결 -->
+    <script th:src="@{/js/common.js}"></script>
+    </body>
+</html>
