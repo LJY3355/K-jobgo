@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: k-jobgo
+    env: docker
+    plan: free
+    repo: https://github.com/LJY3355/K-jobgo
+    branch: main
+    rootDir: demo
+    autoDeploy: true
