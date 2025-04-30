@@ -1,0 +1,257 @@
+/* ================================
+   ✅ 중앙 K-jobgo 로고: 완전 독립 스타일
+   ================================ */
+.center-kjobgo-logo {
+  position: relative;             /* 독립적 위치지정 */
+  width: 100%;                    /* 전체 너비 */
+  display: flex;                  /* 가로 중앙 정렬용 */
+  justify-content: center;       /* 가운데 정렬 */
+  align-items: center;           /* 수직 가운데 정렬 */
+  margin: 60px auto 10px auto;   /* 위아래 여백 */
+  z-index: 10;                    /* 다른 요소 위에 */
+}
+
+/* ✅ 로고 이미지 */
+.k-jobgologo {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* K-jobgo 색상 버전 (원형 내부용) */
+.step-title-colored {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  gap: 2px;
+}
+
+.step-title-colored .k { color: #0083e8; }   /* 파랑 */
+.step-title-colored .dash { color: black; }  /* 검정 */
+.step-title-colored .j { color: #FAE128; }   /* 노랑 */
+.step-title-colored .o1 { color: #7030a0; }  /* 보라 */
+.step-title-colored .b { color: #0083e8; }   /* 파랑 */
+.step-title-colored .g { color: #3f7f2f; }   /* 초록 */
+.step-title-colored .o2 { color: #c90000; }  /* 빨강 */
+
+/* 원형 안 키워드에 색상 부여 */
+.step-circle .step-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 색상별 적용 */
+.step-box:nth-child(1) .step-title { color: #0083e8; } /* 블루 */
+.step-box:nth-child(2) .step-title { color: #7030a0; } /* 퍼플 */
+.step-box:nth-child(3) .step-title { color: #3f7f2f; } /* 그린 */
+.step-box:nth-child(4) .step-title { color: #c9a700; } /* 옐로우에는 어두운 골드 톤 */
+.step-box:nth-child(5) .step-title { color: #c90000; } /* 레드 */
+
+.about-slogan {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.about-slogan:hover {
+  text-decoration: underline;
+  color: #0054a8;
+}
+
+.about-section {
+  padding: 80px 60px;
+  background-color: #F5F5F5;
+  max-width: 1500px;
+  margin: 80px auto 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+/* 영어 키워드 강조 */
+.keywords {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+  color: #000000;
+  font-size: 16px;
+}
+
+/* 간단한 영어 문장 */
+.english {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.step-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 92%;
+}
+
+/* ✅ 배경 원형 기본 위치는 왼쪽 */
+.step-box::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.1;
+  z-index: -1;
+  left: -50px;  /* 기본 위치 */
+}
+
+/* ✅ 2번째(보라색)는 step-circle 기준으로 살짝 오른쪽 */
+.step-box:nth-of-type(2)::before {
+ left: 80px;
+  background-color: var(--purple);
+}
+
+/* ✅ 4번째(노란색)도 step-circle 기준으로 살짝 오른쪽 */
+.step-box:nth-of-type(4)::before {
+ left: 80px;
+  background-color: var(--yellow);
+}
+
+/* 💡 PC용: 좌 우 번갈아 배치 */
+.step-box:nth-of-type(1)::before { background-color: var(--blue); left: -50px; }
+.step-box:nth-of-type(2)::before { background-color: var(--purple); right: -50px; }
+.step-box:nth-of-type(3)::before { background-color: var(--green); left: -50px; }
+.step-box:nth-of-type(4)::before { background-color: var(--yellow); right: -50px; }
+.step-box:nth-of-type(5)::before { background-color: var(--red); left: -50px; }
+
+.step-box.left-align { flex-direction: row; }
+.step-box.right-align { flex-direction: row-reverse; }
+
+.step-box.left-align {
+  width: 98%;        /* ✅ 일반보다 넓게 */
+  max-width: 1100px; /* ✅ 너무 넓어지지 않도록 제한 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-circle {
+  flex: 0 0 140px;
+  height: 140px;
+  background-color: white;
+  border: 6px solid;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.step-box:nth-child(1) .step-circle { border-color: var(--blue); }
+.step-box:nth-child(2) .step-circle { border-color: var(--purple); }
+.step-box:nth-child(3) .step-circle { border-color: var(--green); }
+.step-box:nth-child(4) .step-circle { border-color: var(--yellow); }
+.step-box:nth-child(5) .step-circle { border-color: var(--red); }
+
+.step-icon {
+  font-size: 32px;
+  color: var(--yellow);
+  margin-bottom: 5px;
+}
+
+.step-title {
+  font-size: 20px;
+  color: var(--blue);
+  font-weight: bold;
+  line-height: 1.2;
+  
+}
+
+.step-content {
+  flex: 1;
+  padding: 0 120px;
+  max-width: 700px;  /* 예: 텍스트 줄바꿈 방지용 넓이 확보 */
+}
+
+.step-desc {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+.step-desc .highlight {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+	  .about-section {
+    padding: 40px 16px;    /* 회색 배경의 좌우 패딩 유지 */
+  }
+  .step-box {
+    width: 100%;           /* 부모의 내부 너비(패딩 제외)를 기준으로 100%로 설정 */
+    max-width: calc(100% - 32px); /* 부모의 좌우 패딩(16px + 16px = 32px)을 고려해 너비 조정 */
+    margin-left: auto;     /* 수평 가운데 정렬 */
+    margin-right: auto;    /* 수평 가운데 정렬 */
+    margin-bottom: 40px;   /* 하단 여백 유지 */
+    padding: 20px 16px;    /* 내부 패딩 유지 */
+    flex-direction: column !important; /* 세로 정렬 유지 */
+    align-items: center;   /* 내부 콘텐츠 중앙 정렬 */
+  }
+  
+    .step-box.left-align,
+  .step-box.right-align {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .step-circle {
+        /* 📌 모바일에서 원형이 찌그러지는 것 방지 */
+    width: 140px;           /* 정사각형 */
+    height: 140px;
+    aspect-ratio: 1 / 1;     /* 비율 고정으로 정확한 원 유지 */
+    margin-bottom: 15px;
+    
+  }
+  .step-content {
+    padding: 0;
+    text-align: center;
+  }
+  .step-title {
+    font-size: 18px;
+  }
+  .step-desc {
+    font-size: 14px;
+  }
+
+  .step-box.left-align {
+    width: 100%;           /* .step-box와 동일한 너비로 통일 */
+    max-width: calc(100% - 32px); /* 부모의 좌우 패딩을 고려한 최대 너비 */
+  }
+
+  .step-box::before {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+  }
+    .step-box:nth-of-type(2)::before {
+    left: 80px;
+    background-color: var(--purple);
+  }
+
+  .step-box:nth-of-type(4)::before {
+    left: 80px;
+    background-color: var(--yellow);
+  }
+    .about-section {
+    padding: 40px 16px;
+  }
+}
