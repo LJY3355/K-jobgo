@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="해외 취업 연결 플랫폼 K-jobgo">
+    <meta name="keywords" content="해외취업, 이력서, 구직, 구인, 외국인, 기업, 취업소개, 취업 알선, 일자리, 사람구함">
+    <meta name="author" content="K-jobgo Team">
+
+    <title>K-jobgo.com</title>
+
+    <!-- Favicon -->
+	<link rel="icon" type="image/png" href="/img/favicon.png" />
+	
+    <!-- CSS 연결 -->
+<!-- ✅ 공통 먼저, 상세 후 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" th:href="@{/css/layout.css}">
+<link rel="stylesheet" th:href="@{/css/toggle.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+
+</head>
+
+<body>
+<header class="top-var">
+  <!-- ✅ 로고 + 슬로건 + 회사소개를 하나의 묶음으로 감싸기 -->
+<div class="brand-header">
+  <div class="logo-slogan">
+    <img src="/img/favicon.png" class="logo" />
+    <p class="about-slogan"> KOREAMSA Inc.</p>
+  </div>
+</div>
+  
+	  <!-- 토글, 메뉴 네비게이션 -->
+	  <div class="menu-wrapper">
+	  <button>로그인</button>
+	    <div class="menu-toggle" >☰</div>
+	    <ul id="menu" class="hidden-menu">
+	      <li>관리자</li>
+	      <li>프로필작성</li>
+	      <li>문의게시판</li>
+	      <li>공지사항</li>
+	    </ul>
+	  </div>
+</header>
+
+    <main class="main-var">
+        <img src="/img/final_K-jobgo_.png" alt="k-jobgo로고"  class="k-jobgologo"/>
+
+    <div class="search-group">
+		<input type="text" id="searchInput" class="main-search" placeholder="해당되는 문구를 선택해주세요"  autocomplete="off" />
+			<ul id="dropdownList" class="dropdown hidden">
+			  <li data-value="recruit">회사를 찾고 있습니다.</li>
+			  <li data-value="company">인재를 찾고 있습니다.</li>
+			  <li data-value="justLooking">상담을 받고 싶습니다.</li>
+			</ul>
+        <button class="main-btn">확인</button>
+    </div>
+    
+
+<div class="sub-page">
+  <a href="https://www.hikorea.go.kr/mobile/mMain.pt" class="link-page" target="_blank">Hi  Korea</a> <!-- VISA -->
+  <a href="https://www.moel.go.kr/info/defaulter/defaulterList.do" class="link-page" target="_blank">Wage Defaulters</a> <!-- 체불 사업자 명단 -->
+  <a href="https://www.immigration.go.kr/immigration/1500/subview.do" class="link-page" target="_blank">Immigration Policy</a> <!-- 외국인정책본부 -->
+</div>
+
+  <p class="main-slogan">Take Root in Korea</p>
+
+
+
+ </main>
+
+    <footer class="foot-var">
+  			<span>(주)한국경력지원사업단&nbsp; 대표이사 : 이준희 <span class="divider">|</span> 사업자등록번호 : 887-81-00124</span>
+     <div>
+        <p> 본사_경기도 김포시 김포한강4로 125 월드타워 705호 <span class="divider">|</span> 본부_경기도 광명시 일직로 43 GIDC A1706호</p>
+        <p> 국내지사_김해지사, 대구지사, 천안지사, 광주지사, 원주지사 <span class="divider">|</span> 해외지사_베트남, 필리핀, 인도네시아, 인도, 몽골, 네팔, 우즈베키스탄</p>
+		<p>Tel_ 031-983-0942 <span class="divider">|</span>  Fax_ 031-624-1540  <span class="divider">|</span> Email_ k-jobgo@naver.com</p>
+ 		<p>ⓒ 2025 K-jobgo. All rights reserved.</p>
+ 		</div>
+		 <p>
+		  	  <a th:href="@{/company}" class="link-page">About Us</a> |
+			  <a href="#" class="link-page" onclick="alert('준비 중입니다'); return false;">Privacy Policy</a> |
+			  <a href="#" class="link-page" onclick="alert('준비 중입니다'); return false;">Terms of Service</a> |
+		</p>
+    </footer>
+    <!-- JS 연결 -->
+    <script th:src="@{/js/common.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
