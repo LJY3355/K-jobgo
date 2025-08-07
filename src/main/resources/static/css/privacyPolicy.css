@@ -1,0 +1,66 @@
+/* privacyPolicy.css */
+
+/* 모달 배경 */
+.modal {
+  display: none; /* 기본 숨김 */
+  position: fixed; /* 화면 고정 */
+  z-index: 1000; /* 최상위 */
+  left: 0;
+  top: 0;
+  width: 100%; /* 전체 너비 */
+  height: 100%; /* 전체 높이 */
+  overflow: auto; /* 내용이 길면 스크롤 */
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은 배경 */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 모달을 열 때 보여주기 위한 클래스 */
+.modal.show {
+  display: block;
+}
+
+/* 모달 콘텐츠 박스 */
+.modal-content {
+  background-color: #fff;
+  margin: 80px auto; /* 상단 80px 띄우고 중앙 정렬 */
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  max-width: 720px;
+  width: 90%;
+  max-height: 80vh; /* 최대 높이 80% */
+  overflow-y: auto; /* 세로 스크롤 가능 */
+  box-sizing: border-box;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #f44336;
+}
+
+/* 모달 내용 텍스트 */
+.modal-content-text p {
+  margin-bottom: 1em;
+}
+
+.modal-content-text strong {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.modal-content-text u {
+  text-decoration: underline;
+}

@@ -65,15 +65,15 @@
 <form class="profileform" th:action="@{/admin/profileRegister}"  method="post" enctype="multipart/form-data">
 <h1>인재 프로필 등록</h1>
     <!-- ✅ 통합 박스 시작 -->
-            <div class="notice-required">
-  <p>※ <strong>기본정보는 필수 항목</strong>입니다. 모든 항목을 빠짐없이 입력해주세요.</p>
-</div>
+     <div class="notice-required">
+  	<p>※ <strong>기본정보는 필수 항목</strong>입니다. 모든 항목을 빠짐없이 입력해주세요.</p>
+	</div>
     <div class="profile-box">
-        <!-- 사진 영역 -->
-        <div class="photo-area">
-            <input type="file" id="photo" name="photo" accept="image/*" />
-            <img id="preview" src="#" alt="미리보기" />
-        </div>
+    <!-- 사진 영역 -->
+    <div class="photo-area">
+        <input type="file" id="photo" name="photo" accept="image/*" />
+        <img id="preview" src="#" alt="미리보기" />
+    </div>
 
 <!-- 기본정보 -->
 <div class="profile-info">

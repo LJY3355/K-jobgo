@@ -23,11 +23,28 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> ((AuthorizeHttpRequestsConfigurer.AuthorizedUrl)((AuthorizeHttpRequestsConfigurer.AuthorizedUrl)((AuthorizeHttpRequestsConfigurer.AuthorizedUrl)auth.requestMatchers(new String[]{"/admin/**"})).authenticated().requestMatchers(new String[]{"/", "/home", "/loginPage", "/profileList", "/profileDetail/**"})).permitAll().anyRequest()).permitAll()).csrf(csrf -> csrf.disable()).formLogin(login -> ((FormLoginConfigurer)((FormLoginConfigurer)login.loginPage("/loginPage").loginProcessingUrl("/login")).defaultSuccessUrl("/admin/profileList", true)).permitAll()).httpBasic(basic -> basic.disable());
-        return (SecurityFilterChain)http.build();
-    }
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	    http
+	        .authorizeHttpRequests(auth -> auth
+	            .requestMatchers("/admin/**").authenticated()
+	            .requestMatchers("/", "/home", "/loginPage", "/profileList", "/profileDetail/**", "/client/**", "/api/check-email", "/api/business/**").permitAll()
+	            .anyRequest().permitAll()
+	        )
+	        .csrf(csrf -> csrf
+	            .ignoringRequestMatchers("/api/login") // 이 라인 추가: /api/login 에 대해서만 CSRF 체크 안 함
+	        )
+	        .formLogin(login -> login
+	            .loginPage("/loginPage")
+	            .loginProcessingUrl("/login")
+	            .defaultSuccessUrl("/admin/profileList", true)
+	            .permitAll()
+	        )
+	        .httpBasic(basic -> basic.disable());
+
+	    return http.build();
+	}
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

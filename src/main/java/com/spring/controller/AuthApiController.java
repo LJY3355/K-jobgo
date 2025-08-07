@@ -30,6 +30,14 @@ public class AuthApiController {
         Admin admin = adminService.authenticate(loginDTO.getAdminLoginId(), loginDTO.getAdminPassword());
 
         if (admin != null) {
+        	 // 권한 제한 (예: 4번 권한은 접근 불가) — 먼저 체크
+            System.out.println("authorityId: " + admin.getAuthorityType().getAuthorityId());
+            // 권한 제한 (예: 4번 권한은 접근 불가)
+            if (admin.getAuthorityType().getAuthorityId() == 4) {
+                System.out.println("퇴사자라서 거부: authorityId == 4");
+                return ResponseEntity.status(403).body(null);
+            }
+            
             // 세션에 관리자 정보 저장
             session.setAttribute("loggedInAdmin", admin);
 
@@ -39,10 +47,7 @@ public class AuthApiController {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
 
-            // 권한 제한 (예: 4번 권한은 접근 불가)
-            if (admin.getAuthorityType().getAuthorityId() == 4) {
-                return ResponseEntity.status(403).body(null);
-            }
+            System.out.println("Authentication 세팅 후 SecurityContext: " + SecurityContextHolder.getContext().getAuthentication());
 
             // 로그인 응답 생성
             LoginResponseDto responseDto = new LoginResponseDto(
@@ -56,6 +61,7 @@ public class AuthApiController {
         }
 
         // 인증 실패
+        System.out.println("로그인 실패: 아이디/비밀번호 불일치 또는 존재하지 않음");
         return ResponseEntity.badRequest().build();
     }
 

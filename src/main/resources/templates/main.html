@@ -31,6 +31,8 @@
 <link rel="stylesheet" th:href="@{/css/main.css}">
 <link rel="stylesheet" th:href="@{/css/login.css}">
 
+<!-- <link rel="stylesheet" th:href="@{/css/privacyPolicy.css}"> -->
+
 </head>
 
 <body class="all-page" th:attr="data-is-admin=${isAdmin}">
@@ -100,14 +102,65 @@
 
   <p class="main-slogan">Take Root in Korea</p>
 
+<!-- 모달
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closePrivacyModal">&times;</span>
+    <div class="modal-content-text">
+      <p><strong>1. 수집하는 개인정보 항목 및 수집 방법</strong><br>
+      본 사이트는 회원가입 절차 없이, 다음과 같은 경로를 통해 개인정보를 수집합니다.<br>
+      - <u>외국인 인재 매칭 신청서</u> 작성 시: 회사명, 담당자명, 전화번호, 이메일 등<br>
+      - <u>프로필 등록</u> 시: 성명, 연락처, 학력, 경력, 희망 근무지 등</p>
 
+      <p><strong>2. 개인정보 수집 및 이용 목적</strong><br>
+      수집한 개인정보는 아래 목적을 위해 사용됩니다.<br>
+      - 외국인 인재 매칭 상담 및 적합도 분석<br>
+      - 관리자의 프로필 열람 및 매칭 진행<br>
+      - 필요 시 사용자의 개별 확인 또는 연락 목적</p>
 
+      <p><strong>3. 개인정보의 보유 및 이용 기간</strong><br>
+      수집된 개인정보는 수집 목적이 달성된 후 지체 없이 파기됩니다. 단, 관계 법령에 따라 보존이 필요한 경우 해당 법령에 따릅니다.</p>
+
+      <p><strong>4. 개인정보의 제3자 제공</strong><br>
+      본 사이트는 이용자의 동의 없이 개인정보를 외부에 제공하지 않습니다. 다만 다음의 경우는 예외로 합니다.<br>
+      - 이용자가 사전에 동의한 경우<br>
+      - 법령에 근거해 제공 의무가 있는 경우</p>
+
+      <p><strong>5. 개인정보 보호 조치</strong><br>
+      - 제출된 프로필은 마스킹 처리되어 기업 사용자 및 관리자 외에는 확인할 수 없습니다.<br>
+      - 기업이 작성한 신청서는 고유 접수번호와 비밀번호를 통해 해당 작성자만 조회할 수 있습니다.<br>
+      - 모든 개인정보는 HTTPS 보안 접속을 통해 안전하게 암호화 처리됩니다.</p>
+
+      <p><strong>6. 정보주체의 권리와 그 행사 방법</strong><br>
+      이용자는 언제든지 본인의 개인정보에 대해 열람, 정정, 삭제, 처리정지 등을 요청할 수 있으며, 문의는 운영자 이메일을 통해 가능합니다.</p>
+
+      <p><strong>7. 개인정보 처리의 위탁</strong><br>
+      본 사이트는 개인정보 처리를 외부 업체에 위탁하지 않습니다.</p>
+
+      <p><strong>8. 개인정보 자동 수집 장치의 설치·운영 및 거부</strong><br>
+      본 사이트는 쿠키(Cookie)를 사용하지 않으며, 별도의 자동 수집 장치를 운용하지 않습니다.</p>
+
+      <p><strong>9. 개인정보 보호책임자</strong><br>
+      - 책임자: 한국경영지원사업단 운영자<br>
+      - 이메일: k-jobgo@naver.com</p>
+
+      <p><strong>10. 정책 변경에 대한 공지</strong><br>
+      개인정보 처리방침의 내용 추가, 삭제 및 수정이 있을 경우 시행 최소 7일 전 공지사항을 통해 고지합니다.</p>
+
+      <p><strong>시행일자</strong><br>
+      부칙
+      이 약관은 &lt;사이트 개설일&gt;부터 시행합니다.</p>
+    </div>
+  </div>
+</div>
+ -->
  </main>
 
     <footer class="foot-var">
     <p>
 		<a th:href="@{/companyInfo}" class="link-page">About Us</a> |
-		<a href="#" class="link-page" onclick="alert('준비 중입니다'); return false;">Privacy Policy</a> |
+	<!-- <a href="#" id="openPrivacyPolicy" class="link-page">Privacy Policy</a> --> 
+	<a href="#" class="link-page" onclick="alert('준비 중입니다'); return false;">Privacy Policy</a> |
 		<a href="#" class="link-page" onclick="alert('준비 중입니다'); return false;">Terms of Service</a> 
 	</p>
 		
@@ -129,5 +182,6 @@
     <script th:src="@{/js/common.js}"></script>
     <script th:src="@{/js/login.js}"></script>
     <script th:src="@{/js/main.js}"></script>
+<!-- <script th:src="@{/js/privacyPolicy.js}"></script> -->
 </body>
 </html>

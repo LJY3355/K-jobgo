@@ -24,6 +24,8 @@ import com.spring.page.dto.ProfilePage;
 import com.spring.profile.masked.dto.MaskedProfileDto;
 import jakarta.servlet.http.HttpSession;
 import java.util.List;
+
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,8 +47,9 @@ public class MainController {
         return "redirect:/home";
     }
 
-    @GetMapping(value={"/loginPage"})
-    public String loginPage() {
+    @GetMapping("/loginPage")
+    public String loginPage(Model model, CsrfToken csrfToken) {
+        model.addAttribute("_csrf", csrfToken);
         return "login";
     }
 
@@ -113,6 +116,11 @@ public class MainController {
     @GetMapping(value={"/matchingPage"})
     public String partnerCompany() {
         return "MatchingPage";
+    }
+    
+    @GetMapping("/MatchingPage")
+    public String showMatchingPage() {
+        return "MatchingPage";  // MatchingPage.html 뷰 반환
     }
 }
 
